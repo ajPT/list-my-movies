@@ -23,7 +23,7 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         super.viewDidLoad()
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        self.navigationController?.hidesBarsOnTap = false
+        self.navigationController?.navigationBarHidden = false
     }
 
     @IBAction func addMovie(sender: UIButton) {
@@ -34,11 +34,12 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: context)!
             let movie = Movie(entity: entity, insertIntoManagedObjectContext: context)
             
-            if let image = moviePic?.image {
-                movie.setMovieImage(image)
-            } else {
-                movie.setMovieImage(UIImage(named: "nomovie")!)
-            }
+            movie.setMovieImage(moviePic?.image)
+//            if let image = moviePic?.image {
+//                movie.setMovieImage(image)
+//            } else {
+//                movie.setMovieImage(UIImage(named: "nomovie")!)
+//            }
             movie.title = title
             movie.plot = plot
             movie.year = year

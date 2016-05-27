@@ -14,9 +14,14 @@ class Movie: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 
-    func setMovieImage(img: UIImage) {
-        let data = UIImagePNGRepresentation(img)
-        self.image = data
+    func setMovieImage(img: UIImage?) {
+        if let movieImg = img {
+            let data = UIImagePNGRepresentation(movieImg)
+            self.image = data
+        } else {
+            let data = UIImagePNGRepresentation(UIImage(named: "nomovie")!)
+            self.image = data
+        }
     }
     
     func getMovieImage() -> UIImage {

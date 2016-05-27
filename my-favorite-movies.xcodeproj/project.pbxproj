@@ -348,6 +348,7 @@
 				E01CA1F41CF60CDE005C55C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

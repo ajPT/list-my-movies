@@ -7,12 +7,39 @@
 //
 
 import UIKit
+import CoreData
 
 class ShowMovieVC: UIViewController {
+    
+    @IBOutlet weak var movieCover: UIImageView!
+    @IBOutlet weak var titleYear: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var genre: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var actors: UILabel!
+    @IBOutlet weak var awards: UILabel!
+    @IBOutlet weak var plot: UILabel!
 
+    var movieToShow: Movie!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = false
         self.navigationController?.hidesBarsOnTap = true
+        updateMovieInfoToShow()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.hidesBarsOnTap = false
+    }
+    
+    func updateMovieInfoToShow() {
+        if let title = movieToShow.title, let year = movieToShow.year, let plotTxt = movieToShow.plot {
+            movieCover.image = movieToShow.getMovieImage()
+            titleYear.text = "\(title) (\(year))"
+            plot.text = plotTxt
+        }
     }
 
 }

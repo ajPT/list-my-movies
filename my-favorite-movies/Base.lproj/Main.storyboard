@@ -682,6 +682,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="actors" destination="bDE-nq-5Zy" id="W3F-Lh-0CI"/>
+                        <outlet property="awards" destination="Kut-vG-rit" id="aPX-RF-Hlx"/>
+                        <outlet property="date" destination="3WG-fc-ZcR" id="EdS-Go-yEd"/>
+                        <outlet property="duration" destination="5aP-uG-rX5" id="azD-h7-6IL"/>
+                        <outlet property="genre" destination="Y1t-s8-Wj5" id="SQm-Ok-PHS"/>
+                        <outlet property="movieCover" destination="505-I6-bYq" id="uFQ-0o-AKv"/>
+                        <outlet property="plot" destination="gCJ-A1-hTt" id="OKU-4R-9Fz"/>
+                        <outlet property="rating" destination="ge7-xs-Tqa" id="r8L-Tl-FkZ"/>
+                        <outlet property="titleYear" destination="b9x-JL-i1P" id="OAe-Rh-j6C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQt-9B-PXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,6 +15,5 @@ class InitialVC: UIViewController {
         self.navigationController?.navigationBarHidden = true
         }
 
-
 }
 

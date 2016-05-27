@@ -125,18 +125,18 @@
                                                         <constraint firstAttribute="width" constant="75" id="h7c-6Z-HUJ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome (Ano)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb1-Ph-y9A">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome (Ano)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb1-Ph-y9A" userLabel="titleYear">
                                                     <rect key="frame" x="91" y="8" width="501" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="ezd-u1-HJ7"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnq-AQ-YFu">
-                                                    <rect key="frame" x="91" y="37" width="501" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plot" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xnq-AQ-YFu" userLabel="plot">
+                                                    <rect key="frame" x="91" y="29" width="501" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -147,7 +147,7 @@
                                             <constraints>
                                                 <constraint firstItem="hb1-Ph-y9A" firstAttribute="top" secondItem="8A9-83-4Lu" secondAttribute="topMargin" id="4V0-1M-5Ch"/>
                                                 <constraint firstItem="hb1-Ph-y9A" firstAttribute="leading" secondItem="Vb2-Qa-aI1" secondAttribute="trailing" constant="8" id="4hV-h6-8yx"/>
-                                                <constraint firstItem="Xnq-AQ-YFu" firstAttribute="top" secondItem="hb1-Ph-y9A" secondAttribute="bottom" constant="8" id="BhU-4F-jz8"/>
+                                                <constraint firstItem="Xnq-AQ-YFu" firstAttribute="top" secondItem="hb1-Ph-y9A" secondAttribute="bottom" id="BhU-4F-jz8"/>
                                                 <constraint firstItem="Xnq-AQ-YFu" firstAttribute="leading" secondItem="Vb2-Qa-aI1" secondAttribute="trailing" constant="8" id="D6U-z0-X3O"/>
                                                 <constraint firstItem="Vb2-Qa-aI1" firstAttribute="leading" secondItem="8A9-83-4Lu" secondAttribute="leadingMargin" id="XI0-fl-9Mc"/>
                                                 <constraint firstItem="Xnq-AQ-YFu" firstAttribute="bottom" secondItem="8A9-83-4Lu" secondAttribute="bottomMargin" id="Y2Z-zY-IXV"/>

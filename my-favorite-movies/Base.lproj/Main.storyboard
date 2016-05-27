@@ -109,9 +109,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bQ1-DP-chi">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="117" id="9Pg-rb-9kw" customClass="MovieCell" customModule="my_favorite_movies" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="117" id="9Pg-rb-9kw" customClass="MovieCell" customModule="my_favorite_movies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Pg-rb-9kw" id="8A9-83-4Lu">
@@ -131,13 +131,13 @@
                                                         <constraint firstAttribute="height" constant="21" id="ezd-u1-HJ7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plot" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xnq-AQ-YFu" userLabel="plot">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plot" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xnq-AQ-YFu" userLabel="plot">
                                                     <rect key="frame" x="91" y="29" width="501" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="91" y="37" width="301" height="71"/>
@@ -157,6 +157,7 @@
                                                 <constraint firstItem="Vb2-Qa-aI1" firstAttribute="top" secondItem="8A9-83-4Lu" secondAttribute="topMargin" id="xpu-8D-29j"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="movieImg" destination="Vb2-Qa-aI1" id="TQA-k8-uZ6"/>
                                             <outlet property="moviePlot" destination="Xnq-AQ-YFu" id="6xG-eI-pYo"/>
@@ -170,7 +171,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bQ1-DP-chi" firstAttribute="top" secondItem="pzi-UO-fyG" secondAttribute="bottom" id="0RT-2v-k85"/>
                             <constraint firstItem="bQ1-DP-chi" firstAttribute="leading" secondItem="ctL-Bv-IPO" secondAttribute="leading" id="7jc-in-oyw"/>

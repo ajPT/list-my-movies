@@ -23,8 +23,6 @@ extension Movie {
     @NSManaged var genre: String?
     @NSManaged var runtime: String?
     @NSManaged var releaseDate: String?
-    @NSManaged var country: String?
-    @NSManaged var language: String?
     @NSManaged var videoPath: String?
     @NSManaged var image: NSData?
 

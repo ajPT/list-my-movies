@@ -1,5 +1,5 @@
 //
-//  SearchVC.swift
+//  ShowMovieVC.swift
 //  my-favorite-movies
 //
 //  Created by Amadeu Andrade on 26/05/16.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class ShowMovieVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.hidesBarsOnTap = true
     }
-
 
 }

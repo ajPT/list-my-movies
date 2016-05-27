@@ -13,7 +13,7 @@ import UIKit
 class Movie: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
-    
+
     func setMovieImage(img: UIImage) {
         let data = UIImagePNGRepresentation(img)
         self.image = data
@@ -23,5 +23,5 @@ class Movie: NSManagedObject {
         let img = UIImage(data: self.image!)!
         return img
     }
-
+    
 }

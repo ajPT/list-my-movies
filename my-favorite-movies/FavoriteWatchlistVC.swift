@@ -17,12 +17,12 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.automaticallyAdjustsScrollViewInsets = false
+        //self.automaticallyAdjustsScrollViewInsets = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(FavoriteWatchlistVC.onAddBtnPressed))
     }
     
     func onAddBtnPressed() {
-        performSegueWithIdentifier("addMovie", sender: nil)
+        performSegueWithIdentifier("showAddMovieVC", sender: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -58,6 +58,10 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
         } else {
             return MovieCell()
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("showMovieVC", sender: nil)
     }
     
 

@@ -111,14 +111,14 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pMh-CA-4sG">
-                                <rect key="frame" x="20" y="176" width="512" height="386"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pMh-CA-4sG">
+                                <rect key="frame" x="20" y="176" width="560" height="386"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VuN-Qj-X4t" userLabel="btnsSV">
-                                        <rect key="frame" x="0.0" y="0.0" width="512" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VuN-Qj-X4t" userLabel="btnsSV">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjk-zK-9Fi">
-                                                <rect key="frame" x="0.0" y="0.0" width="254" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjk-zK-9Fi">
+                                                <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="nU3-r4-Dvm"/>
                                                 </constraints>
@@ -130,8 +130,8 @@
                                                     <action selector="onSearchByPressed:" destination="2es-j8-C8J" eventType="touchUpInside" id="jeA-t9-n85"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ql1-F9-z8c">
-                                                <rect key="frame" x="259" y="0.0" width="253" height="30"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ql1-F9-z8c">
+                                                <rect key="frame" x="283" y="0.0" width="277" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <state key="normal" title="By IMDb ID">
                                                     <color key="titleColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,22 +142,22 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hF4-Za-brs">
-                                        <rect key="frame" x="0.0" y="108" width="512" height="170"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hF4-Za-brs">
+                                        <rect key="frame" x="0.0" y="108" width="560" height="170"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="magnifier" translatesAutoresizingMaskIntoConstraints="NO" id="sJW-A2-WUa">
-                                                <rect key="frame" x="0.0" y="0.0" width="512" height="170"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifier" translatesAutoresizingMaskIntoConstraints="NO" id="sJW-A2-WUa">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="170"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="170" id="Zz4-jL-UVq"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RN9-Mc-ebg">
-                                        <rect key="frame" x="0.0" y="356" width="512" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RN9-Mc-ebg">
+                                        <rect key="frame" x="0.0" y="356" width="560" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-nC-qqk" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="512" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-nC-qqk" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                                 <color key="backgroundColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="67h-kq-9GV"/>
@@ -216,6 +216,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pMh-CA-4sG" secondAttribute="trailing" id="UgX-n7-Yqd"/>
                             <constraint firstItem="BlP-O0-sER" firstAttribute="centerY" secondItem="KgA-2x-t7L" secondAttribute="centerY" constant="50" id="VIL-8U-ZAb"/>
                             <constraint firstItem="pMh-CA-4sG" firstAttribute="top" secondItem="NPq-v2-Kre" secondAttribute="bottom" constant="40" id="aDt-uP-Rha"/>
+                            <constraint firstItem="pMh-CA-4sG" firstAttribute="leading" secondItem="KgA-2x-t7L" secondAttribute="leadingMargin" id="dB1-gM-Qpe"/>
                             <constraint firstItem="UWe-T2-fVc" firstAttribute="top" secondItem="h6B-CM-t2d" secondAttribute="bottom" id="gHS-Al-ZN0"/>
                             <constraint firstItem="NPq-v2-Kre" firstAttribute="centerX" secondItem="KgA-2x-t7L" secondAttribute="centerX" id="gg8-6Z-Eg6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BlP-O0-sER" secondAttribute="trailing" id="izl-Qw-yk8"/>

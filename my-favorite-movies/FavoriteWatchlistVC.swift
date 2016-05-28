@@ -19,6 +19,7 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(FavoriteWatchlistVC.onAddBtnPressed))
+        tableView.backgroundView = UIImageView(image: UIImage(named: "bg"))
     }
     
     func onAddBtnPressed() {
@@ -58,6 +59,10 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
         } else {
             return MovieCell()
         }
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.clearColor()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -18,12 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EhD-O8-NwS">
-                                <rect key="frame" x="20" y="464" width="560" height="106"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Tzj-FW-cxb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EhD-O8-NwS">
+                                <rect key="frame" x="20" y="445" width="560" height="125"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e7-km-WqP" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="35"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.69803921570000005" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="VJu-Tp-5Ck"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="SEARCH" image="search"/>
                                         <connections>
@@ -31,7 +37,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oa-Fj-wnM" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="37" width="560" height="32"/>
+                                        <rect key="frame" x="0.0" y="45" width="560" height="35"/>
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="FAVORITES" image="favorites">
@@ -42,7 +48,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-sw-cH3" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="74" width="560" height="32"/>
+                                        <rect key="frame" x="0.0" y="90" width="560" height="35"/>
                                         <color key="backgroundColor" red="1" green="0.56724398860000003" blue="0.1150288961" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="WATCHLIST" image="watchlist">
@@ -54,21 +60,16 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tzj-FW-cxb">
-                                <rect key="frame" x="180" y="110" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="17x-7u-3wQ"/>
-                                    <constraint firstAttribute="height" constant="128" id="yoJ-q2-gaO"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921568627451" green="0.25490196078431371" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EhD-O8-NwS" secondAttribute="bottom" constant="30" id="2OH-bZ-tFb"/>
-                            <constraint firstItem="Tzj-FW-cxb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="46" id="7g2-EF-hb8"/>
-                            <constraint firstItem="Tzj-FW-cxb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lYm-LB-wVI"/>
+                            <constraint firstItem="Tzj-FW-cxb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nfu-pU-qwq"/>
+                            <constraint firstItem="Tzj-FW-cxb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UXd-rL-4uD"/>
+                            <constraint firstAttribute="trailing" secondItem="Tzj-FW-cxb" secondAttribute="trailing" id="ZYi-fR-i9z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EhD-O8-NwS" secondAttribute="trailing" id="s0x-Mj-LHq"/>
                             <constraint firstItem="EhD-O8-NwS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="w4K-bm-JeQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tzj-FW-cxb" secondAttribute="bottom" id="yld-sH-462"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FTe-Xv-FS1"/>
@@ -88,7 +89,18 @@
                     <view key="view" contentMode="scaleToFill" id="KgA-2x-t7L">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="h6B-CM-t2d">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h6B-CM-t2d" firstAttribute="leading" secondItem="KgA-2x-t7L" secondAttribute="leading" id="Gbe-R0-BMk"/>
+                            <constraint firstAttribute="trailing" secondItem="h6B-CM-t2d" secondAttribute="trailing" id="SS2-JT-KkZ"/>
+                            <constraint firstItem="UWe-T2-fVc" firstAttribute="top" secondItem="h6B-CM-t2d" secondAttribute="bottom" id="gHS-Al-ZN0"/>
+                            <constraint firstItem="h6B-CM-t2d" firstAttribute="top" secondItem="KgA-2x-t7L" secondAttribute="top" id="o1m-2e-Gdd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NI-nC-vB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,6 +209,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="obj-jY-DLj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QC1-hL-RBT" customClass="RoundedCornerImg" customModule="my_favorite_movies" customModuleProvider="target">
                                 <rect key="frame" x="207" y="84" width="186" height="245"/>
                                 <constraints>
@@ -278,15 +293,19 @@
                         <color key="backgroundColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="obj-jY-DLj" firstAttribute="leading" secondItem="397-OJ-A0l" secondAttribute="leading" id="8KW-Ye-MVf"/>
                             <constraint firstItem="89l-hS-PSQ" firstAttribute="centerX" secondItem="QC1-hL-RBT" secondAttribute="centerX" id="Gi1-tn-6rO"/>
                             <constraint firstItem="QC1-hL-RBT" firstAttribute="centerX" secondItem="397-OJ-A0l" secondAttribute="centerX" id="J7w-Wz-sAm"/>
                             <constraint firstItem="89l-hS-PSQ" firstAttribute="centerY" secondItem="QC1-hL-RBT" secondAttribute="centerY" id="S4D-Tz-ZSu"/>
+                            <constraint firstItem="WQW-vM-Ceh" firstAttribute="top" secondItem="obj-jY-DLj" secondAttribute="bottom" id="WF7-Q3-4Mu"/>
                             <constraint firstItem="89l-hS-PSQ" firstAttribute="height" secondItem="QC1-hL-RBT" secondAttribute="height" id="cKy-OZ-tBM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q5k-Pn-VgN" secondAttribute="trailing" id="ecN-7S-XZT"/>
                             <constraint firstItem="Q5k-Pn-VgN" firstAttribute="top" secondItem="89l-hS-PSQ" secondAttribute="bottom" constant="20" id="j9q-Qv-iqg"/>
                             <constraint firstItem="89l-hS-PSQ" firstAttribute="width" secondItem="QC1-hL-RBT" secondAttribute="width" id="koj-Zx-7D8"/>
+                            <constraint firstItem="obj-jY-DLj" firstAttribute="top" secondItem="397-OJ-A0l" secondAttribute="top" id="peY-kb-Zv9"/>
                             <constraint firstItem="Q5k-Pn-VgN" firstAttribute="leading" secondItem="397-OJ-A0l" secondAttribute="leadingMargin" id="r03-v1-4gd"/>
                             <constraint firstItem="QC1-hL-RBT" firstAttribute="top" secondItem="ePU-q6-LQh" secondAttribute="bottom" constant="20" id="zYK-cz-BtP"/>
+                            <constraint firstAttribute="trailing" secondItem="obj-jY-DLj" secondAttribute="trailing" id="zZj-dt-ZkY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -331,6 +350,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-G3-7L7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nomovie" translatesAutoresizingMaskIntoConstraints="NO" id="505-I6-bYq" customClass="RoundedCornerImg" customModule="my_favorite_movies" customModuleProvider="target">
                                 <rect key="frame" x="20" y="84" width="157" height="226"/>
                                 <constraints>
@@ -624,6 +646,7 @@
                             <constraint firstItem="505-I6-bYq" firstAttribute="leading" secondItem="YVE-Ah-0bw" secondAttribute="leadingMargin" id="LWt-uH-JcB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kAB-zS-iQl" secondAttribute="trailing" id="OOP-Gy-FN1"/>
                             <constraint firstItem="dmE-a3-fOR" firstAttribute="top" secondItem="b9x-JL-i1P" secondAttribute="bottom" constant="10" id="RIz-zr-4wv"/>
+                            <constraint firstAttribute="trailing" secondItem="IRv-G3-7L7" secondAttribute="trailing" id="Tuy-hF-U9p"/>
                             <constraint firstItem="Cin-4d-aM2" firstAttribute="top" secondItem="kAB-zS-iQl" secondAttribute="bottom" constant="20" id="XON-79-HEn"/>
                             <constraint firstItem="kAB-zS-iQl" firstAttribute="leading" secondItem="YVE-Ah-0bw" secondAttribute="leadingMargin" id="Xwt-i1-FfG"/>
                             <constraint firstItem="b9x-JL-i1P" firstAttribute="top" secondItem="YVE-Ah-0bw" secondAttribute="topMargin" constant="20" id="bk1-Nj-ZlX"/>
@@ -631,6 +654,9 @@
                             <constraint firstItem="Dz7-N5-LSr" firstAttribute="top" secondItem="505-I6-bYq" secondAttribute="bottom" constant="8" id="eJc-fJ-Nxi"/>
                             <constraint firstItem="b9x-JL-i1P" firstAttribute="centerX" secondItem="YVE-Ah-0bw" secondAttribute="centerX" id="hDu-xT-4wn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dmE-a3-fOR" secondAttribute="trailing" id="oB3-dr-0xx"/>
+                            <constraint firstItem="Cin-4d-aM2" firstAttribute="top" secondItem="IRv-G3-7L7" secondAttribute="bottom" id="qzY-hl-lbm"/>
+                            <constraint firstItem="IRv-G3-7L7" firstAttribute="top" secondItem="YVE-Ah-0bw" secondAttribute="top" id="rRT-Hj-h8W"/>
+                            <constraint firstItem="IRv-G3-7L7" firstAttribute="leading" secondItem="YVE-Ah-0bw" secondAttribute="leading" id="t6e-8b-lxQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -651,6 +677,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg" width="1920" height="1080"/>
         <image name="favorites" width="32" height="32"/>
         <image name="imdb" width="48" height="48"/>
         <image name="nomovie" width="240" height="350"/>

@@ -21,6 +21,7 @@
 		E01CA2061CF73F52005C55C1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CA2051CF73F52005C55C1 /* SearchVC.swift */; };
 		E01CA2101CF7715F005C55C1 /* ShowMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CA20F1CF7715F005C55C1 /* ShowMovieVC.swift */; };
 		E01CA2121CF7B40D005C55C1 /* RoundedCornerImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CA2111CF7B40D005C55C1 /* RoundedCornerImg.swift */; };
+		E040521D1CFA0F5C0065DCCF /* RoundedCornerBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040521C1CFA0F5C0065DCCF /* RoundedCornerBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E01CA2051CF73F52005C55C1 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		E01CA20F1CF7715F005C55C1 /* ShowMovieVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMovieVC.swift; sourceTree = "<group>"; };
 		E01CA2111CF7B40D005C55C1 /* RoundedCornerImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerImg.swift; sourceTree = "<group>"; };
+		E040521C1CFA0F5C0065DCCF /* RoundedCornerBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				E01CA1E41CF60CDE005C55C1 /* Main.storyboard */,
 				E01CA1EC1CF60CDE005C55C1 /* LaunchScreen.storyboard */,
 				E01CA2111CF7B40D005C55C1 /* RoundedCornerImg.swift */,
+				E040521C1CFA0F5C0065DCCF /* RoundedCornerBtn.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				E01CA1F91CF72B51005C55C1 /* FavoriteWatchlistVC.swift in Sources */,
 				E01CA1E31CF60CDE005C55C1 /* InitialVC.swift in Sources */,
 				E01CA2061CF73F52005C55C1 /* SearchVC.swift in Sources */,
+				E040521D1CFA0F5C0065DCCF /* RoundedCornerBtn.swift in Sources */,
 				E01CA1E91CF60CDE005C55C1 /* my_favorite_movies.xcdatamodeld in Sources */,
 				E01CA2101CF7715F005C55C1 /* ShowMovieVC.swift in Sources */,
 				E01CA1FB1CF72BF1005C55C1 /* MovieCell.swift in Sources */,
@@ -315,6 +319,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "amadeujandrade.my-favorite-movies";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,6 +331,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "amadeujandrade.my-favorite-movies";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

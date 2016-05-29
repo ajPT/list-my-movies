@@ -37,6 +37,46 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func onSearchPressed(sender: UIButton) {
-        
+        makeRequest("tt0137523")
+        //performSegueWithIdentifier("showMovie", sender: nil)
     }
+    
+    func makeRequest(imdbid: String) {
+        let url = NSURL(string: "http://api.themoviedb.org/3/movie/\(imdbid)?api_key=e55425032d3d0f371fc776f302e7c09b")!
+        let request = NSMutableURLRequest(URL: url)
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            if let response = response, data = data {
+                //print(response)
+                //print(String(data: data, encoding: NSUTF8StringEncoding))
+                self.pparseJSON(data)
+            } else {
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    
+    func pparseJSON(data: NSData) {
+        var json: [String: AnyObject]!
+        
+        do {
+            json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions()) as? [String: AnyObject]
+        } catch {
+            //erro
+        }
+        print(json)
+        // print(json["title"])
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMovie" {
+            if let viewToBeCalled = segue.destinationViewController as? ShowMovieVC {
+                viewToBeCalled.movieToShow = Movie()
+            }
+        }
+    }
+    
 }

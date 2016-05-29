@@ -230,6 +230,7 @@
                         <outlet property="searchField" destination="BlP-O0-sER" id="njB-F7-Z8D"/>
                         <outlet property="selectAnOptionLbl" destination="T7s-Uf-gWd" id="dSn-Xg-sq3"/>
                         <outlet property="yearField" destination="I3p-5f-aah" id="FhH-ST-ULI"/>
+                        <segue destination="JGs-bm-HPp" kind="show" identifier="showMovie" id="xcU-Im-AI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NI-nC-vB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDT-pi-5tK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2394" y="-261"/>
+            <point key="canvasLocation" x="2386" y="-146"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IKb-xh-0ni">
@@ -802,7 +803,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQt-9B-PXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="579"/>
+            <point key="canvasLocation" x="2336" y="-795"/>
         </scene>
     </scenes>
     <resources>
@@ -817,6 +818,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Bid-IB-n7Y"/>
+        <segue reference="xcU-Im-AI9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>

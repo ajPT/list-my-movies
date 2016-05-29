@@ -15,11 +15,14 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var yearField: UITextField!
     
+    var movie: Movie!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         searchField.hidden = true
         yearField.hidden = true
+        movie = Movie()
     }
 
     @IBAction func onSearchByPressed(sender: UIButton) {
@@ -37,21 +40,84 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func onSearchPressed(sender: UIButton) {
-        makeRequest("tt0137523")
-        //performSegueWithIdentifier("showMovie", sender: nil)
+        makeMovieInfoRequest("tt0468569")
+        makeMovieVideoRequest("tt0468569") //tt0137523
+        print(movie)
+       // performSegueWithIdentifier("showMovie", sender: nil)
     }
     
-    func makeRequest(imdbid: String) {
-        let url = NSURL(string: "http://api.themoviedb.org/3/movie/\(imdbid)?api_key=e55425032d3d0f371fc776f302e7c09b")!
+    func makeMovieInfoRequest(imdbid: String) {
+        let url = NSURL(string: "http://www.omdbapi.com/?i=\(imdbid)&plot=short&r=json")!
         let request = NSMutableURLRequest(URL: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if let response = response, data = data {
-                //print(response)
-                //print(String(data: data, encoding: NSUTF8StringEncoding))
-                self.pparseJSON(data)
+                print(response)
+                print(String(data: data, encoding: NSUTF8StringEncoding))
+                //BEGIN parsing JSON
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                    print(json)
+                    guard let actors = json["Actors"] as? String,
+                        let awards = json["Awards"] as? String,
+                        let genre = json["Genre"] as? String,
+                        //let image = json["Poster"] as? String,
+                        let imdbID = json["imdbID"] as? String,
+                        let imdbRating = json["imdbRating"] as? String,
+                        let plot = json["Plot"] as? String,
+                        let releaseDate = json["Released"] as? String,
+                        let runtime = json["Runtime"] as? String,
+                        let title = json["Awards"] as? String,
+                        let year = json["Year"] as? String
+                        else { return }
+                    self.movie.actors = actors
+                    self.movie.awards = awards
+                    self.movie.genre = genre
+                    //movie.image = image
+                    self.movie.imdbID = imdbID
+                    self.movie.imdbRating = imdbRating
+                    self.movie.plot = plot
+                    self.movie.releaseDate = releaseDate
+                    self.movie.runtime = runtime
+                    self.movie.title = title
+                    self.movie.year = year
+                } catch {
+                    print("error serializing JSON")
+                }
+                //END parsing JSON
+            } else {
+                print(error)
+            }
+        }
+        task.resume()
+    }
+
+    func makeMovieVideoRequest(imdbid: String) {
+        let url = NSURL(string: "http://api.themoviedb.org/3/movie/\(imdbid)/videos?api_key=e55425032d3d0f371fc776f302e7c09b")!
+        let request = NSMutableURLRequest(URL: url)
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            if let response = response, data = data {
+                print(response)
+                print(String(data: data, encoding: NSUTF8StringEncoding))
+                //BEGIN parsing JSON
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                    if let jsonResults = json["results"] as? [[String: AnyObject]] {
+                        for result in jsonResults {
+                            if let code = result["key"] as? String {
+                                self.movie.videoPath = "https://www.youtube.com/watch?v=\(code)"
+                            }
+                        }
+                    }
+                } catch {
+                    print("error serializing JSON")
+                }
+            //END parsing JSON
             } else {
                 print(error)
             }
@@ -59,22 +125,10 @@ class SearchVC: UIViewController {
         task.resume()
     }
     
-    func pparseJSON(data: NSData) {
-        var json: [String: AnyObject]!
-        
-        do {
-            json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions()) as? [String: AnyObject]
-        } catch {
-            //erro
-        }
-        print(json)
-        // print(json["title"])
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMovie" {
             if let viewToBeCalled = segue.destinationViewController as? ShowMovieVC {
-                viewToBeCalled.movieToShow = Movie()
+                viewToBeCalled.movieToShow = movie
             }
         }
     }

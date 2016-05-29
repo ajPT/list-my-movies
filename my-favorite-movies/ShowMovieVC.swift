@@ -36,7 +36,7 @@ class ShowMovieVC: UIViewController {
     
     func updateMovieInfoToShow() {
         if let title = movieToShow.title, let year = movieToShow.year, let plotTxt = movieToShow.plot {
-            movieCover.image = movieToShow.getMovieImage()
+            //movieCover.image = movieToShow.getMovieImage()
             titleYear.text = "\(title) (\(year))"
             plot.text = plotTxt
             if let imdbRating = movieToShow.imdbRating {

@@ -16,6 +16,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var yearField: UITextField!
     @IBOutlet weak var imdbIDField: UITextField!
+    @IBOutlet weak var searchBtn: UIButton!
     
     var movie: Movie!
     
@@ -25,15 +26,18 @@ class SearchVC: UIViewController {
         titleField.hidden = true
         yearField.hidden = true
         imdbIDField.hidden = true
+        searchBtn.enabled = false
+        searchBtn.alpha = 0.5
         
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
         let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: context)!
         movie = Movie(entity: entity, insertIntoManagedObjectContext: context)
-
     }
 
     @IBAction func onSearchByPressed(sender: UIButton) {
+        searchBtn.enabled = true
+        searchBtn.alpha = 1.0
         selectAnOptionLbl.hidden = true
         magnifierImg.alpha = 0.25
         if sender.tag == 0 {
@@ -51,12 +55,27 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func onSearchPressed(sender: UIButton) {
-        makeMovieInfoRequest("tt0468569ttt")
-        //makeMovieVideoRequest("tt0468569") //tt0137523
+        var url: NSURL?
+        
+        if imdbIDField.text != "" {
+            url = NSURL(string: "http://www.omdbapi.com/?i=\(imdbIDField.text!)&plot=short&r=json")
+        } else if titleField.text != "" && yearField.text != "" {
+            let stringToUrl = titleField.text!.stringByReplacingOccurrencesOfString(" ", withString: "+")
+            url = NSURL(string: "http://www.omdbapi.com/?t=\(stringToUrl)&y=\(yearField.text!)&plot=short&r=json")
+            print(url)
+        } else if titleField.text != "" {
+            let stringToUrl = titleField.text!.stringByReplacingOccurrencesOfString(" ", withString: "+")
+            url = NSURL(string: "http://www.omdbapi.com/?t=\(stringToUrl)&plot=short&r=json")
+        } else {
+            UtilAlerts().showAlert(self, title: "Warning", message: UtilAlerts.applicationAlerts.MissingInformation)
+        }
+    
+        if url != nil {
+            makeMovieInfoRequest(url!)
+        }
     }
     
-    func makeMovieInfoRequest(imdbid: String) {
-        let url = NSURL(string: "http://www.omdbapi.com/?i=\(imdbid)&plot=short&r=json")!
+    func makeMovieInfoRequest(url: NSURL) {
         let request = NSMutableURLRequest(URL: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -71,7 +90,9 @@ class SearchVC: UIViewController {
                     print(json)
                     if let responde = json["Response"] as? String where responde == "False" {
                         print("Wrong IMDb ID!")
-                        UtilAlerts().showAlert(self, title: "Warning", message: UtilAlerts.applicationAlerts.WrongIMDbID)
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            UtilAlerts().showAlert(self, title: "Warning", message: UtilAlerts.applicationAlerts.WrongInformation)
+                        }
                     } else if let actors = json["Actors"] as? String,
                         let awards = json["Awards"] as? String,
                         let genre = json["Genre"] as? String,

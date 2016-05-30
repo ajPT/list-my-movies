@@ -11,7 +11,7 @@ import UIKit
 class UtilAlerts {
     
     struct applicationAlerts {
-        static let WrongIMDbID = "The IMDb ID does not match any contents from IMDb. Please check if it is correct."
+        static let WrongInformation = "The information introduced does not match any contents from database. Please check if it is correct."
         static let MissingInformation = "All fields are mandatory and must be completed."
     }
 

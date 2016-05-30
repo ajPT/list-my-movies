@@ -17,7 +17,6 @@ class SearchVC: UIViewController {
     @IBOutlet weak var yearField: UITextField!
     
     var movie: Movie!
-    var context: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +25,7 @@ class SearchVC: UIViewController {
         yearField.hidden = true
         
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        context = app.managedObjectContext
+        let context = app.managedObjectContext
         let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: context)!
         movie = Movie(entity: entity, insertIntoManagedObjectContext: context)
 
@@ -56,7 +55,7 @@ class SearchVC: UIViewController {
         let url = NSURL(string: "http://www.omdbapi.com/?i=\(imdbid)&plot=short&r=json")!
         let request = NSMutableURLRequest(URL: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-    
+        
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if let response = response, data = data {

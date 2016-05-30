@@ -27,7 +27,9 @@ class ShowMovieVC: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         self.navigationController?.hidesBarsOnTap = true
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         updateMovieInfoToShow()
     }
     

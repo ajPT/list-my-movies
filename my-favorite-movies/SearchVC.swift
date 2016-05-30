@@ -52,7 +52,6 @@ class SearchVC: UIViewController {
     
     func makeMovieInfoRequest(imdbid: String) {
         let url = NSURL(string: "http://www.omdbapi.com/?i=\(imdbid)&plot=short&r=json")!
-        //let url = NSURL(string: "http://api.themoviedb.org/3/movie/\(imdbid)?api_key=e55425032d3d0f371fc776f302e7c09b&append_to_response=videos")!
         let request = NSMutableURLRequest(URL: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -108,36 +107,37 @@ class SearchVC: UIViewController {
         task.resume()
     }
 
-    func makeMovieVideoRequest(imdbid: String) {
-        let url = NSURL(string: "http://api.themoviedb.org/3/movie/\(imdbid)/videos?api_key=e55425032d3d0f371fc776f302e7c09b")!
-        let request = NSMutableURLRequest(URL: url)
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            if let response = response, data = data {
-                print(response)
-                print(String(data: data, encoding: NSUTF8StringEncoding))
-                //BEGIN parsing JSON
-                do {
-                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                    if let jsonResults = json["results"] as? [[String: AnyObject]] {
-                        for result in jsonResults {
-                            if let code = result["key"] as? String {
-                                self.movie.videoPath = "https://www.youtube.com/watch?v=\(code)"
-                            }
-                        }
-                    }
-                } catch {
-                    print("error serializing JSON")
-                }
-            //END parsing JSON
-            } else {
-                print(error)
-            }
-        }
-        task.resume()
-    }
+//    func makeMovieVideoRequest(imdbid: String) {
+//        let url = NSURL(string: "http://api.themoviedb.org/3/movie/\(imdbid)/videos?api_key=e55425032d3d0f371fc776f302e7c09b")!
+//        let request = NSMutableURLRequest(URL: url)
+//        request.addValue("application/json", forHTTPHeaderField: "Accept")
+//        
+//        let session = NSURLSession.sharedSession()
+//        let task = session.dataTaskWithRequest(request) { data, response, error in
+//            if let response = response, data = data {
+//                print(response)
+//                print(String(data: data, encoding: NSUTF8StringEncoding))
+//                //BEGIN parsing JSON
+//                do {
+//                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+//                    if let jsonResults = json["results"] as? [[String: AnyObject]] {
+//                        for result in jsonResults {
+//                            if let code = result["key"] as? String {
+//                                self.movie.videoPath = "https://www.youtube.com/watch?v=\(code)"
+//                                break
+//                            }
+//                        }
+//                    }
+//                } catch {
+//                    print("error serializing JSON")
+//                }
+//            //END parsing JSON
+//            } else {
+//                print(error)
+//            }
+//        }
+//        task.resume()
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMovie" {

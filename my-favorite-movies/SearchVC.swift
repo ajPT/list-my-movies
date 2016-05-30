@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchVC: UIViewController {
 
@@ -16,13 +17,19 @@ class SearchVC: UIViewController {
     @IBOutlet weak var yearField: UITextField!
     
     var movie: Movie!
+    var context: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         searchField.hidden = true
         yearField.hidden = true
-        movie = Movie()
+        
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        context = app.managedObjectContext
+        let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: context)!
+        movie = Movie(entity: entity, insertIntoManagedObjectContext: context)
+
     }
 
     @IBAction func onSearchByPressed(sender: UIButton) {
@@ -41,16 +48,15 @@ class SearchVC: UIViewController {
     
     @IBAction func onSearchPressed(sender: UIButton) {
         makeMovieInfoRequest("tt0468569")
-        makeMovieVideoRequest("tt0468569") //tt0137523
-        print(movie)
-       // performSegueWithIdentifier("showMovie", sender: nil)
+        //makeMovieVideoRequest("tt0468569") //tt0137523
+        performSegueWithIdentifier("showMovie", sender: movie)
     }
     
     func makeMovieInfoRequest(imdbid: String) {
         let url = NSURL(string: "http://www.omdbapi.com/?i=\(imdbid)&plot=short&r=json")!
         let request = NSMutableURLRequest(URL: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
+    
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if let response = response, data = data {
@@ -60,7 +66,7 @@ class SearchVC: UIViewController {
                 do {
                     let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
                     print(json)
-                    guard let actors = json["Actors"] as? String,
+                    if let actors = json["Actors"] as? String,
                         let awards = json["Awards"] as? String,
                         let genre = json["Genre"] as? String,
                         //let image = json["Poster"] as? String,
@@ -70,19 +76,20 @@ class SearchVC: UIViewController {
                         let releaseDate = json["Released"] as? String,
                         let runtime = json["Runtime"] as? String,
                         let title = json["Awards"] as? String,
-                        let year = json["Year"] as? String
-                        else { return }
-                    self.movie.actors = actors
-                    self.movie.awards = awards
-                    self.movie.genre = genre
-                    //movie.image = image
-                    self.movie.imdbID = imdbID
-                    self.movie.imdbRating = imdbRating
-                    self.movie.plot = plot
-                    self.movie.releaseDate = releaseDate
-                    self.movie.runtime = runtime
-                    self.movie.title = title
-                    self.movie.year = year
+                        let year = json["Year"] as? String {
+                        self.movie.actors = actors
+                        self.movie.awards = awards
+                        self.movie.genre = genre
+                        //movie.image = image
+                        self.movie.imdbID = imdbID
+                        self.movie.imdbRating = imdbRating
+                        self.movie.plot = plot
+                        self.movie.releaseDate = releaseDate
+                        self.movie.runtime = runtime
+                        self.movie.title = title
+                        self.movie.year = year
+                        print(self.movie)
+                    }
                 } catch {
                     print("error serializing JSON")
                 }
@@ -128,7 +135,7 @@ class SearchVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMovie" {
             if let viewToBeCalled = segue.destinationViewController as? ShowMovieVC {
-                viewToBeCalled.movieToShow = movie
+                viewToBeCalled.movieToShow = sender as! Movie
             }
         }
     }

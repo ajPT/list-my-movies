@@ -27,6 +27,7 @@ class ShowMovieVC: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         self.navigationController?.hidesBarsOnTap = true
+        
         updateMovieInfoToShow()
     }
     
@@ -43,6 +44,11 @@ class ShowMovieVC: UIViewController {
                 rating.text = imdbRating
             } else {
                 rating.text = "?"
+            }
+            if let releaseData = movieToShow.releaseDate {
+                date.text = releaseData
+            } else {
+                date.text = "?"
             }
             if let movieGenre = movieToShow.genre {
                 genre.text = movieGenre

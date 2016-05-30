@@ -46,7 +46,7 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func onSearchPressed(sender: UIButton) {
-        makeMovieInfoRequest("tt0468569")
+        makeMovieInfoRequest("tt0468569ttt")
         //makeMovieVideoRequest("tt0468569") //tt0137523
     }
     
@@ -64,7 +64,10 @@ class SearchVC: UIViewController {
                 do {
                     let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
                     print(json)
-                    if let actors = json["Actors"] as? String,
+                    if let responde = json["Response"] as? String where responde == "False" {
+                        print("Wrong IMDb ID!")
+                        UtilAlerts().showAlert(self, title: "Warning", message: UtilAlerts.applicationAlerts.WrongIMDbID)
+                    } else if let actors = json["Actors"] as? String,
                         let awards = json["Awards"] as? String,
                         let genre = json["Genre"] as? String,
                         let image = json["Poster"] as? String,

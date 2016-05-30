@@ -48,9 +48,7 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             self.navigationController?.popViewControllerAnimated(true)
             
         } else {
-            let alert = UIAlertController(title: "Warning", message: "All fields are mandatory and must be completed.", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Close", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            UtilAlerts().showAlert(self, title: "Warning", message: UtilAlerts.applicationAlerts.MissingInformation)
         }
         
     }

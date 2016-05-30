@@ -48,11 +48,11 @@ class SearchVC: UIViewController {
     @IBAction func onSearchPressed(sender: UIButton) {
         makeMovieInfoRequest("tt0468569")
         //makeMovieVideoRequest("tt0468569") //tt0137523
-        performSegueWithIdentifier("showMovie", sender: movie)
     }
     
     func makeMovieInfoRequest(imdbid: String) {
         let url = NSURL(string: "http://www.omdbapi.com/?i=\(imdbid)&plot=short&r=json")!
+        //let url = NSURL(string: "http://api.themoviedb.org/3/movie/\(imdbid)?api_key=e55425032d3d0f371fc776f302e7c09b&append_to_response=videos")!
         let request = NSMutableURLRequest(URL: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -68,18 +68,22 @@ class SearchVC: UIViewController {
                     if let actors = json["Actors"] as? String,
                         let awards = json["Awards"] as? String,
                         let genre = json["Genre"] as? String,
-                        //let image = json["Poster"] as? String,
+                        let image = json["Poster"] as? String,
                         let imdbID = json["imdbID"] as? String,
                         let imdbRating = json["imdbRating"] as? String,
                         let plot = json["Plot"] as? String,
                         let releaseDate = json["Released"] as? String,
                         let runtime = json["Runtime"] as? String,
-                        let title = json["Awards"] as? String,
+                        let title = json["Title"] as? String,
                         let year = json["Year"] as? String {
                         self.movie.actors = actors
                         self.movie.awards = awards
                         self.movie.genre = genre
-                        //movie.image = image
+                        if let url = NSURL(string: "\(image)") {
+                            if let data = NSData(contentsOfURL: url) {
+                                self.movie.image = data
+                            }
+                        }
                         self.movie.imdbID = imdbID
                         self.movie.imdbRating = imdbRating
                         self.movie.plot = plot
@@ -87,7 +91,11 @@ class SearchVC: UIViewController {
                         self.movie.runtime = runtime
                         self.movie.title = title
                         self.movie.year = year
-                        print(self.movie)
+                        
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            self.performSegueWithIdentifier("showMovie", sender: self.movie)
+                        }
+                        
                     }
                 } catch {
                     print("error serializing JSON")

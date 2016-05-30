@@ -35,11 +35,6 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             let movie = Movie(entity: entity, insertIntoManagedObjectContext: context)
             
             movie.setMovieImage(moviePic?.image)
-//            if let image = moviePic?.image {
-//                movie.setMovieImage(image)
-//            } else {
-//                movie.setMovieImage(UIImage(named: "nomovie")!)
-//            }
             movie.title = title
             movie.plot = plot
             movie.year = year

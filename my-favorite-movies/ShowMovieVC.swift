@@ -34,7 +34,7 @@ class ShowMovieVC: UIViewController {
     }
     
     func updateMovieInfoToShow() {
-        if let title = movieToShow.title, let year = movieToShow.year, let plotTxt = movieToShow.plot {
+        if let title = movieToShow.title, let year = movieToShow.year, let plotTxt = movieToShow.plot { //change this
             movieCover.image = movieToShow.getMovieImage()
             titleYear.text = "\(title) (\(year))"
             plot.text = plotTxt
@@ -72,5 +72,12 @@ class ShowMovieVC: UIViewController {
             //add imdbPath
         }
     }
+    
+    @IBAction func onAddToFavoritesPressed(sender: AnyObject) {
+    }
+    
+    @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
+    }
+    
 
 }

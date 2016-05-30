@@ -756,6 +756,9 @@
                                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="711" height="34"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="onAddToFavoritesPressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="EwR-cc-PVr"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-Rn-vYr" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
                                                 <rect key="frame" x="285" y="0.0" width="275" height="30"/>
@@ -769,6 +772,9 @@
                                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
                                                     <rect key="frame" x="721" y="0.0" width="711" height="34"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="onAddToWatchlistPressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="z14-5g-GtT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

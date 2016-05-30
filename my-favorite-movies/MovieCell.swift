@@ -16,13 +16,6 @@ class MovieCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureCell(movie: Movie) {
@@ -30,7 +23,6 @@ class MovieCell: UITableViewCell {
         if let title = movie.title, let year = movie.year {
             movieTitleYear.text = "\(title) (\(year))"
         }
-        //movieTitleYear.text = "\(movie.title!) (\(movie.year!))"
         moviePlot.text = movie.plot
     }
 

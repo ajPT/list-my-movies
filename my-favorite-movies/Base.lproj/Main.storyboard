@@ -137,7 +137,7 @@
                                                     <color key="titleColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="onSearchByPressed:" destination="2es-j8-C8J" eventType="touchUpInside" id="CLY-46-w32"/>
+                                                    <action selector="onSearchByPressed:" destination="2es-j8-C8J" eventType="touchUpInside" id="9zA-B1-Enz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -184,7 +184,7 @@
                                 <color key="textColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BlP-O0-sER">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BlP-O0-sER">
                                 <rect key="frame" x="20" y="335" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BxY-wC-elD"/>
@@ -193,7 +193,16 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3p-5f-aah">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IMDb ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tYe-ye-2MC">
+                                <rect key="frame" x="20" y="335" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0sr-eJ-3UI"/>
+                                </constraints>
+                                <color key="textColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3p-5f-aah">
                                 <rect key="frame" x="263" y="373" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BZz-Nm-0db"/>
@@ -207,7 +216,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wbs-sc-AcG" firstAttribute="bottomMargin" secondItem="pMh-CA-4sG" secondAttribute="bottom" constant="20" id="1wY-Th-tWD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tYe-ye-2MC" secondAttribute="trailing" id="6tC-tY-IxD"/>
                             <constraint firstItem="h6B-CM-t2d" firstAttribute="leading" secondItem="KgA-2x-t7L" secondAttribute="leading" id="Gbe-R0-BMk"/>
+                            <constraint firstItem="tYe-ye-2MC" firstAttribute="leading" secondItem="KgA-2x-t7L" secondAttribute="leading" id="Hns-4X-JV7"/>
                             <constraint firstItem="UWe-T2-fVc" firstAttribute="top" secondItem="wbs-sc-AcG" secondAttribute="bottom" constant="10" id="IFm-Mt-8b1"/>
                             <constraint firstItem="wbs-sc-AcG" firstAttribute="trailing" secondItem="KgA-2x-t7L" secondAttribute="trailingMargin" id="K0T-MM-WWd"/>
                             <constraint firstItem="I3p-5f-aah" firstAttribute="top" secondItem="BlP-O0-sER" secondAttribute="bottom" constant="8" id="S6s-Pg-rEX"/>
@@ -217,18 +228,28 @@
                             <constraint firstItem="BlP-O0-sER" firstAttribute="centerY" secondItem="KgA-2x-t7L" secondAttribute="centerY" constant="50" id="VIL-8U-ZAb"/>
                             <constraint firstItem="pMh-CA-4sG" firstAttribute="top" secondItem="NPq-v2-Kre" secondAttribute="bottom" constant="40" id="aDt-uP-Rha"/>
                             <constraint firstItem="pMh-CA-4sG" firstAttribute="leading" secondItem="KgA-2x-t7L" secondAttribute="leadingMargin" id="dB1-gM-Qpe"/>
+                            <constraint firstAttribute="trailing" secondItem="tYe-ye-2MC" secondAttribute="trailing" id="fQD-ot-nHV"/>
                             <constraint firstItem="UWe-T2-fVc" firstAttribute="top" secondItem="h6B-CM-t2d" secondAttribute="bottom" id="gHS-Al-ZN0"/>
+                            <constraint firstItem="tYe-ye-2MC" firstAttribute="centerY" secondItem="KgA-2x-t7L" secondAttribute="centerY" constant="50" id="gaK-dY-7gN"/>
                             <constraint firstItem="NPq-v2-Kre" firstAttribute="centerX" secondItem="KgA-2x-t7L" secondAttribute="centerX" id="gg8-6Z-Eg6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BlP-O0-sER" secondAttribute="trailing" id="izl-Qw-yk8"/>
+                            <constraint firstItem="tYe-ye-2MC" firstAttribute="leading" secondItem="KgA-2x-t7L" secondAttribute="leadingMargin" id="m79-CO-qCB"/>
                             <constraint firstItem="NPq-v2-Kre" firstAttribute="top" secondItem="veh-HU-rWB" secondAttribute="bottom" constant="25" id="npT-6h-GJw"/>
                             <constraint firstItem="h6B-CM-t2d" firstAttribute="top" secondItem="KgA-2x-t7L" secondAttribute="top" id="o1m-2e-Gdd"/>
                             <constraint firstItem="BlP-O0-sER" firstAttribute="leading" secondItem="KgA-2x-t7L" secondAttribute="leadingMargin" id="sbw-v3-7NB"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Hns-4X-JV7"/>
+                                <exclude reference="fQD-ot-nHV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="imdbIDField" destination="tYe-ye-2MC" id="637-Re-7L1"/>
                         <outlet property="magnifierImg" destination="sJW-A2-WUa" id="tWO-mR-EtX"/>
-                        <outlet property="searchField" destination="BlP-O0-sER" id="njB-F7-Z8D"/>
                         <outlet property="selectAnOptionLbl" destination="T7s-Uf-gWd" id="dSn-Xg-sq3"/>
+                        <outlet property="titleField" destination="BlP-O0-sER" id="23f-j2-HFS"/>
                         <outlet property="yearField" destination="I3p-5f-aah" id="FhH-ST-ULI"/>
                         <segue destination="JGs-bm-HPp" kind="show" identifier="showMovie" id="xcU-Im-AI9"/>
                     </connections>

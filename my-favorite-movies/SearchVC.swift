@@ -13,16 +13,18 @@ class SearchVC: UIViewController {
 
     @IBOutlet weak var selectAnOptionLbl: UILabel!
     @IBOutlet weak var magnifierImg: UIImageView!
-    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var yearField: UITextField!
+    @IBOutlet weak var imdbIDField: UITextField!
     
     var movie: Movie!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
-        searchField.hidden = true
+        titleField.hidden = true
         yearField.hidden = true
+        imdbIDField.hidden = true
         
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
@@ -34,14 +36,17 @@ class SearchVC: UIViewController {
     @IBAction func onSearchByPressed(sender: UIButton) {
         selectAnOptionLbl.hidden = true
         magnifierImg.alpha = 0.25
-        searchField.hidden = false
         if sender.tag == 0 {
-            searchField.placeholder = "Title"
+            titleField.hidden = false
             yearField.hidden = false
-            yearField.placeholder = "Year?"
+            imdbIDField.text = ""
+            imdbIDField.hidden = true
         } else if sender.tag == 1 {
-            searchField.placeholder = "IMDb ID"
+            titleField.text = ""
+            yearField.text = ""
+            titleField.hidden = true
             yearField.hidden = true
+            imdbIDField.hidden = false
         }
     }
     

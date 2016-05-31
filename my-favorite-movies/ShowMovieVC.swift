@@ -80,15 +80,28 @@ class ShowMovieVC: UIViewController {
             //add imdbPath
             if let imdbPath = movieToShow.imdbID {
                 print(imdbPath)
+            } else {
+                imdb.enabled = false
+                imdb.alpha = 0.5
             }
         
         }
     }
     
     @IBAction func onAddToFavoritesPressed(sender: AnyObject) {
+    
     }
     
     @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
+    
+    }
+    
+    @IBAction func onYoutubePressed(sender: AnyObject) {
+    
+    }
+    
+    @IBAction func onIMDbPressed(sender: AnyObject) {
+    
     }
     
 

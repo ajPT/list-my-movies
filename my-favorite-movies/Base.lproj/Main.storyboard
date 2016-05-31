@@ -526,6 +526,9 @@
                                             <constraint firstAttribute="width" constant="40" id="Ty1-k0-3fM"/>
                                         </constraints>
                                         <state key="normal" image="youtube"/>
+                                        <connections>
+                                            <action selector="onYoutubePressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="MmV-Nj-1Cg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlc-vq-V9f" userLabel="imdb" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
                                         <rect key="frame" x="60" y="0.0" width="40" height="30"/>
@@ -537,6 +540,9 @@
                                         <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
                                             <rect key="frame" x="50" y="0.0" width="30" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="onIMDbPressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="lDC-uT-Uku"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
@@ -849,7 +855,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Bid-IB-n7Y"/>
-        <segue reference="xcU-Im-AI9"/>
+        <segue reference="zVf-yN-83x"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>

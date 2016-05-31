@@ -21,7 +21,9 @@ class ShowMovieVC: UIViewController {
     @IBOutlet weak var plot: UILabel!
     @IBOutlet weak var youtube: UIButton!
     @IBOutlet weak var imdb: UIButton!
-
+    @IBOutlet weak var addToFavoritesBtn: UIButton!
+    @IBOutlet weak var addToWatchlistBtn: UIButton!
+    
     var movieToShow: Movie!
     
     override func viewDidLoad() {

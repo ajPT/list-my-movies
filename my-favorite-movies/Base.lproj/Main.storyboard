@@ -826,6 +826,8 @@
                     </view>
                     <connections>
                         <outlet property="actors" destination="bDE-nq-5Zy" id="W3F-Lh-0CI"/>
+                        <outlet property="addToFavoritesBtn" destination="MRK-vK-H7W" id="ojE-qr-KhB"/>
+                        <outlet property="addToWatchlistBtn" destination="6pf-Rn-vYr" id="Gsd-h6-iZM"/>
                         <outlet property="awards" destination="Kut-vG-rit" id="aPX-RF-Hlx"/>
                         <outlet property="date" destination="3WG-fc-ZcR" id="EdS-Go-yEd"/>
                         <outlet property="duration" destination="5aP-uG-rX5" id="azD-h7-6IL"/>

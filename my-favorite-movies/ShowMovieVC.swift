@@ -19,6 +19,8 @@ class ShowMovieVC: UIViewController {
     @IBOutlet weak var actors: UILabel!
     @IBOutlet weak var awards: UILabel!
     @IBOutlet weak var plot: UILabel!
+    @IBOutlet weak var youtube: UIButton!
+    @IBOutlet weak var imdb: UIButton!
 
     var movieToShow: Movie!
     
@@ -69,7 +71,17 @@ class ShowMovieVC: UIViewController {
                 awards.text = "?"
             }
             //add videoPath
+            if let movieVideoPath = movieToShow.videoPath {
+                print(movieVideoPath)
+            } else {
+                youtube.enabled = false
+                youtube.alpha = 0.5
+            }
             //add imdbPath
+            if let imdbPath = movieToShow.imdbID {
+                print(imdbPath)
+            }
+        
         }
     }
     

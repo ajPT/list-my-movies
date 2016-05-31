@@ -798,7 +798,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="505-I6-bYq" firstAttribute="top" secondItem="C1i-TL-dGB" secondAttribute="bottom" constant="20" id="2DM-Nn-Ci0"/>
                             <constraint firstItem="Dz7-N5-LSr" firstAttribute="centerX" secondItem="505-I6-bYq" secondAttribute="centerX" id="Ehy-aN-uFH"/>
                             <constraint firstItem="dmE-a3-fOR" firstAttribute="leading" secondItem="505-I6-bYq" secondAttribute="trailing" constant="8" id="IDS-mA-vak"/>
                             <constraint firstItem="505-I6-bYq" firstAttribute="leading" secondItem="YVE-Ah-0bw" secondAttribute="leadingMargin" id="LWt-uH-JcB"/>
@@ -815,6 +814,8 @@
                             <constraint firstItem="Cin-4d-aM2" firstAttribute="top" secondItem="IRv-G3-7L7" secondAttribute="bottom" id="qzY-hl-lbm"/>
                             <constraint firstItem="IRv-G3-7L7" firstAttribute="top" secondItem="YVE-Ah-0bw" secondAttribute="top" id="rRT-Hj-h8W"/>
                             <constraint firstItem="IRv-G3-7L7" firstAttribute="leading" secondItem="YVE-Ah-0bw" secondAttribute="leading" id="t6e-8b-lxQ"/>
+                            <constraint firstItem="gCJ-A1-hTt" firstAttribute="top" secondItem="Dz7-N5-LSr" secondAttribute="bottom" constant="8" id="tYm-ic-uh1"/>
+                            <constraint firstItem="505-I6-bYq" firstAttribute="top" secondItem="b9x-JL-i1P" secondAttribute="bottom" constant="10" id="uid-sB-Eyh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -823,10 +824,12 @@
                         <outlet property="date" destination="3WG-fc-ZcR" id="EdS-Go-yEd"/>
                         <outlet property="duration" destination="5aP-uG-rX5" id="azD-h7-6IL"/>
                         <outlet property="genre" destination="Y1t-s8-Wj5" id="SQm-Ok-PHS"/>
+                        <outlet property="imdb" destination="qlc-vq-V9f" id="sk0-mC-NqX"/>
                         <outlet property="movieCover" destination="505-I6-bYq" id="uFQ-0o-AKv"/>
                         <outlet property="plot" destination="gCJ-A1-hTt" id="OKU-4R-9Fz"/>
                         <outlet property="rating" destination="ge7-xs-Tqa" id="r8L-Tl-FkZ"/>
                         <outlet property="titleYear" destination="b9x-JL-i1P" id="OAe-Rh-j6C"/>
+                        <outlet property="youtube" destination="jcq-M2-Tjm" id="nfo-27-HFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQt-9B-PXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

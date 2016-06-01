@@ -25,12 +25,20 @@ class ShowMovieVC: UIViewController {
     @IBOutlet weak var addToWatchlistBtn: UIButton!
     
     var movieToShow: Movie!
+    var disableButtons = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         self.navigationController?.hidesBarsOnTap = true
         updateMovieInfoToShow()
+        
+        if disableButtons {
+            addToWatchlistBtn.enabled = false
+            addToWatchlistBtn.alpha = 0.5
+            addToFavoritesBtn.enabled = false
+            addToFavoritesBtn.alpha = 0.5
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -91,19 +99,19 @@ class ShowMovieVC: UIViewController {
     }
     
     @IBAction func onAddToFavoritesPressed(sender: AnyObject) {
-    
+        print("FAVORITE")
     }
     
     @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
-    
+        print("WATCHLIST")
     }
     
     @IBAction func onYoutubePressed(sender: AnyObject) {
-    
+        print("YOUTUBE")
     }
     
     @IBAction func onIMDbPressed(sender: AnyObject) {
-    
+        print("IMDB")
     }
     
 

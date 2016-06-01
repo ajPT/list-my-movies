@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ShowMovieVC: UIViewController {
     
@@ -25,7 +26,7 @@ class ShowMovieVC: UIViewController {
     @IBOutlet weak var addToWatchlistBtn: UIButton!
     
     var movieToShow: Movie!
-    var disableButtons = false
+    var fromFavoritesWatchListVC = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class ShowMovieVC: UIViewController {
         self.navigationController?.hidesBarsOnTap = true
         updateMovieInfoToShow()
         
-        if disableButtons {
+        if fromFavoritesWatchListVC {
             addToWatchlistBtn.enabled = false
             addToWatchlistBtn.alpha = 0.5
             addToFavoritesBtn.enabled = false
@@ -43,6 +44,15 @@ class ShowMovieVC: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.hidesBarsOnTap = false
+    }
+    
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        if parent == nil && fromFavoritesWatchListVC == false {
+            // Discard movie from searchVC       
+            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context = app.managedObjectContext
+            context.deleteObject(movieToShow)
+        }
     }
     
     func updateMovieInfoToShow() {
@@ -107,11 +117,19 @@ class ShowMovieVC: UIViewController {
     }
     
     @IBAction func onYoutubePressed(sender: AnyObject) {
-        print("YOUTUBE")
+        performSegueWithIdentifier("ShowWebVC", sender: movieToShow.videoPath)
     }
     
     @IBAction func onIMDbPressed(sender: AnyObject) {
-        print("IMDB")
+        performSegueWithIdentifier("ShowWebVC", sender: movieToShow.imdbID)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowWebVC" {
+            if let showWebVC = segue.destinationViewController as? ShowWebVC {
+                showWebVC.urlFromShowVC = sender as! String
+            }
+        }
     }
     
 

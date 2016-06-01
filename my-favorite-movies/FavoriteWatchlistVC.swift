@@ -77,7 +77,7 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
                     let context = app.managedObjectContext
                     let movie = context.objectWithID(movieID) as! Movie
                     viewToBeCalled.movieToShow = movie
-                    viewToBeCalled.disableButtons = true
+                    viewToBeCalled.fromFavoritesWatchListVC = true
                 }
             }
         }

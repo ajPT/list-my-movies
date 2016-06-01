@@ -25,7 +25,7 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         imagePicker.delegate = self
         self.navigationController?.navigationBarHidden = false
     }
-
+    
     @IBAction func addMovie(sender: UIButton) {
         if let title = titleField.text where title != "", let year = yearField.text where year != "", let plot = plotField.text where plot != "" {
             

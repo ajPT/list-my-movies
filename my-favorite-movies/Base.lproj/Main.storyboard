@@ -838,11 +838,45 @@
                         <outlet property="rating" destination="ge7-xs-Tqa" id="r8L-Tl-FkZ"/>
                         <outlet property="titleYear" destination="b9x-JL-i1P" id="OAe-Rh-j6C"/>
                         <outlet property="youtube" destination="jcq-M2-Tjm" id="nfo-27-HFT"/>
+                        <segue destination="zvJ-vO-4h0" kind="show" identifier="ShowWebVC" id="zNJ-ZG-bj7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQt-9B-PXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2336" y="-795"/>
+        </scene>
+        <!--Show WebVC-->
+        <scene sceneID="ykv-Ti-GCE">
+            <objects>
+                <viewController id="zvJ-vO-4h0" customClass="ShowWebVC" customModule="my_favorite_movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SfD-rw-3pC"/>
+                        <viewControllerLayoutGuide type="bottom" id="NXx-c7-Dew"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7yd-A1-yq9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h74-mf-mcj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h74-mf-mcj" firstAttribute="leading" secondItem="7yd-A1-yq9" secondAttribute="leading" id="VcB-Iv-7TS"/>
+                            <constraint firstAttribute="trailing" secondItem="h74-mf-mcj" secondAttribute="trailing" id="d1i-ao-pLn"/>
+                            <constraint firstItem="h74-mf-mcj" firstAttribute="top" secondItem="SfD-rw-3pC" secondAttribute="bottom" id="p1s-7V-Tan"/>
+                            <constraint firstItem="NXx-c7-Dew" firstAttribute="top" secondItem="h74-mf-mcj" secondAttribute="bottom" id="p2X-2z-RYB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="h74-mf-mcj" id="v7q-8a-lKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNR-uF-0o4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3003" y="-795"/>
         </scene>
     </scenes>
     <resources>

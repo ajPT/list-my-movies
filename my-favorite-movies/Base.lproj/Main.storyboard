@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--InitialVC-->
@@ -393,7 +392,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWy-5I-M3P">
                                                         <rect key="frame" x="0.0" y="0.0" width="465" height="30"/>
-                                                        <color key="textColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -402,7 +401,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="85" id="FEz-Z8-bzZ"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -413,7 +412,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert Plot" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3xA-qd-nwF">
                                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
-                                                        <color key="textColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -517,11 +516,10 @@
                                 </variation>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dz7-N5-LSr" userLabel="youtubeIMDbSV">
-                                <rect key="frame" x="22" y="318" width="153" height="30"/>
+                                <rect key="frame" x="48" y="318" width="101" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcq-M2-Tjm" userLabel="youtube" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="74" height="30"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcq-M2-Tjm" userLabel="youtube" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NUJ-wu-GxW"/>
                                         </constraints>
@@ -530,9 +528,8 @@
                                             <action selector="onYoutubePressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="MmV-Nj-1Cg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlc-vq-V9f" userLabel="imdb" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                        <rect key="frame" x="79" y="0.0" width="74" height="30"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlc-vq-V9f" userLabel="imdb" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
+                                        <rect key="frame" x="53" y="0.0" width="48" height="30"/>
                                         <state key="normal" image="imdb"/>
                                         <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                             <rect key="frame" x="50" y="0.0" width="30" height="30"/>
@@ -545,6 +542,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="58" y="296" width="80" height="30"/>
                                 </variation>
@@ -810,7 +808,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="kAB-zS-iQl" secondAttribute="trailing" id="OOP-Gy-FN1"/>
                             <constraint firstItem="dmE-a3-fOR" firstAttribute="top" secondItem="b9x-JL-i1P" secondAttribute="bottom" constant="10" id="RIz-zr-4wv"/>
                             <constraint firstAttribute="trailing" secondItem="IRv-G3-7L7" secondAttribute="trailing" id="Tuy-hF-U9p"/>
-                            <constraint firstItem="Dz7-N5-LSr" firstAttribute="width" secondItem="505-I6-bYq" secondAttribute="width" multiplier="0.97" id="UWk-6Q-9ai"/>
                             <constraint firstItem="Cin-4d-aM2" firstAttribute="top" secondItem="kAB-zS-iQl" secondAttribute="bottom" constant="20" id="XON-79-HEn"/>
                             <constraint firstItem="kAB-zS-iQl" firstAttribute="leading" secondItem="YVE-Ah-0bw" secondAttribute="leadingMargin" id="Xwt-i1-FfG"/>
                             <constraint firstItem="b9x-JL-i1P" firstAttribute="top" secondItem="YVE-Ah-0bw" secondAttribute="topMargin" constant="20" id="bk1-Nj-ZlX"/>
@@ -881,7 +878,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg" width="1920" height="1080"/>
+        <image name="bg" width="2880" height="1800"/>
         <image name="favorites" width="32" height="32"/>
         <image name="imdb" width="48" height="48"/>
         <image name="magnifier" width="512" height="512"/>
@@ -892,7 +889,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Bid-IB-n7Y"/>
-        <segue reference="zVf-yN-83x"/>
+        <segue reference="xcU-Im-AI9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>

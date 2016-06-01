@@ -24,7 +24,6 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         addPicBtn.addBorder()
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        self.navigationController?.navigationBarHidden = false
     }
     
     @IBAction func addMovie(sender: UIButton) {

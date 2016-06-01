@@ -22,7 +22,6 @@ class SearchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = false
         titleField.hidden = true
         yearField.hidden = true
         imdbIDField.hidden = true

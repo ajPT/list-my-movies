@@ -30,7 +30,6 @@ class ShowMovieVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = false
         self.navigationController?.hidesBarsOnTap = true
         updateMovieInfoToShow()
         
@@ -42,6 +41,7 @@ class ShowMovieVC: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.hidesBarsOnTap = false
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func willMoveToParentViewController(parent: UIViewController?) {

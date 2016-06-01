@@ -17,7 +17,6 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(FavoriteWatchlistVC.onAddBtnPressed))
         tableView.backgroundView = UIImageView(image: UIImage(named: "bg"))
     }

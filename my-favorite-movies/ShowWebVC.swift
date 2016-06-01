@@ -20,7 +20,6 @@ class ShowWebVC: UIViewController {
         super.viewDidLoad()
         webView = WKWebView()
         container.addSubview(webView)
-        self.navigationController?.navigationBarHidden = false
     }
 
     override func viewDidAppear(animated: Bool) {

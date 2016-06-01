@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--InitialVC-->
+        <!--My Movie List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="InitialVC" customModule="my_favorite_movies" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,58 +22,77 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Tzj-FW-cxb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EhD-O8-NwS">
-                                <rect key="frame" x="20" y="445" width="560" height="125"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-H8-gzL">
+                                <rect key="frame" x="30" y="94" width="540" height="476"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e7-km-WqP" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="35"/>
-                                        <color key="backgroundColor" red="0.94117647059999998" green="0.69803921570000005" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="VJu-Tp-5Ck"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="SEARCH" image="search"/>
-                                        <connections>
-                                            <segue destination="2es-j8-C8J" kind="show" identifier="showSearchVC" id="yYo-NH-Mv4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oa-Fj-wnM" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="45" width="560" height="35"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="FAVORITES" image="favorites">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="dMU-bD-UcD" kind="show" identifier="showFavoritesVC" id="liR-bZ-Ana"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-sw-cH3" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="90" width="560" height="35"/>
-                                        <color key="backgroundColor" red="1" green="0.56724398860000003" blue="0.1150288961" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="WATCHLIST" image="watchlist">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="dMU-bD-UcD" kind="show" identifier="showWatchlistVC" id="Bid-IB-n7Y"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hEO-3Q-tWL">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="341"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="03h-M0-PPh">
+                                                <rect key="frame" x="164" y="0.0" width="212" height="341"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="212" id="nQf-vn-zyf"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EhD-O8-NwS">
+                                        <rect key="frame" x="0.0" y="351" width="540" height="125"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e7-km-WqP" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="540" height="35"/>
+                                                <color key="backgroundColor" red="0.94117647059999998" green="0.69803921570000005" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="VJu-Tp-5Ck"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="SEARCH" image="search"/>
+                                                <connections>
+                                                    <segue destination="2es-j8-C8J" kind="show" identifier="showSearchVC" id="yYo-NH-Mv4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oa-Fj-wnM" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="45" width="540" height="35"/>
+                                                <color key="backgroundColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="FAVORITES" image="favorites">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="dMU-bD-UcD" kind="show" identifier="showFavoritesVC" id="liR-bZ-Ana"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-sw-cH3" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="90" width="540" height="35"/>
+                                                <color key="backgroundColor" red="1" green="0.56724398860000003" blue="0.1150288961" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="WATCHLIST" image="watchlist">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="dMU-bD-UcD" kind="show" identifier="showWatchlistVC" id="Bid-IB-n7Y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921568627451" green="0.25490196078431371" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EhD-O8-NwS" secondAttribute="bottom" constant="30" id="2OH-bZ-tFb"/>
+                            <constraint firstItem="vdP-H8-gzL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="5Jr-nU-bqs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vdP-H8-gzL" secondAttribute="trailing" constant="10" id="Gbc-p4-mk2"/>
+                            <constraint firstItem="vdP-H8-gzL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Mhd-i4-II1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vdP-H8-gzL" secondAttribute="bottom" constant="30" id="Mre-fa-Op3"/>
                             <constraint firstItem="Tzj-FW-cxb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nfu-pU-qwq"/>
                             <constraint firstItem="Tzj-FW-cxb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UXd-rL-4uD"/>
                             <constraint firstAttribute="trailing" secondItem="Tzj-FW-cxb" secondAttribute="trailing" id="ZYi-fR-i9z"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EhD-O8-NwS" secondAttribute="trailing" id="s0x-Mj-LHq"/>
-                            <constraint firstItem="EhD-O8-NwS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="w4K-bm-JeQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tzj-FW-cxb" secondAttribute="bottom" id="yld-sH-462"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FTe-Xv-FS1"/>
+                    <navigationItem key="navigationItem" title="My Movie List" id="FTe-Xv-FS1">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1aA-Zd-GN3"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -273,7 +292,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bQ1-DP-chi">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="117" id="9Pg-rb-9kw" customClass="MovieCell" customModule="my_favorite_movies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="117"/>
@@ -318,7 +337,6 @@
                                                 <constraint firstItem="Vb2-Qa-aI1" firstAttribute="top" secondItem="8A9-83-4Lu" secondAttribute="topMargin" id="xpu-8D-29j"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.29803921570000003" green="0.25490196079999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="movieImg" destination="Vb2-Qa-aI1" id="TQA-k8-uZ6"/>
                                             <outlet property="moviePlot" destination="Xnq-AQ-YFu" id="6xG-eI-pYo"/>
@@ -862,10 +880,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="h74-mf-mcj" firstAttribute="top" secondItem="7yd-A1-yq9" secondAttribute="top" id="KkR-RG-yCj"/>
                             <constraint firstItem="h74-mf-mcj" firstAttribute="leading" secondItem="7yd-A1-yq9" secondAttribute="leading" id="VcB-Iv-7TS"/>
                             <constraint firstAttribute="trailing" secondItem="h74-mf-mcj" secondAttribute="trailing" id="d1i-ao-pLn"/>
                             <constraint firstItem="NXx-c7-Dew" firstAttribute="top" secondItem="h74-mf-mcj" secondAttribute="bottom" id="p2X-2z-RYB"/>
+                            <constraint firstItem="h74-mf-mcj" firstAttribute="top" secondItem="7yd-A1-yq9" secondAttribute="top" id="rBE-P3-9yU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -881,6 +899,7 @@
         <image name="bg" width="2880" height="1800"/>
         <image name="favorites" width="32" height="32"/>
         <image name="imdb" width="48" height="48"/>
+        <image name="logo" width="792" height="792"/>
         <image name="magnifier" width="512" height="512"/>
         <image name="nomovie" width="240" height="350"/>
         <image name="search" width="32" height="32"/>
@@ -888,8 +907,8 @@
         <image name="youtube" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bid-IB-n7Y"/>
-        <segue reference="xcU-Im-AI9"/>
+        <segue reference="liR-bZ-Ana"/>
+        <segue reference="zVf-yN-83x"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>

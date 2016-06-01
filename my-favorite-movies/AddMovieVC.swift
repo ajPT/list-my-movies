@@ -12,7 +12,7 @@ import CoreData
 class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var moviePic: RoundedCornerImg?
-    @IBOutlet weak var addPicBtn: UIButton!
+    @IBOutlet weak var addPicBtn: RoundedCornerBtn!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var yearField: UITextField!
     @IBOutlet weak var plotField: UITextField!
@@ -21,6 +21,7 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addPicBtn.addBorder()
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         self.navigationController?.navigationBarHidden = false

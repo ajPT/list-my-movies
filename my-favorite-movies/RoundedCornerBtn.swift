@@ -15,4 +15,9 @@ class RoundedCornerBtn: UIButton {
         self.clipsToBounds = true
     }
     
+    func setButtonDisabled() {
+        self.enabled = false
+        self.alpha = 0.5
+    }
+    
 }

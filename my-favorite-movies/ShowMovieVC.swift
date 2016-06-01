@@ -20,10 +20,10 @@ class ShowMovieVC: UIViewController {
     @IBOutlet weak var actors: UILabel!
     @IBOutlet weak var awards: UILabel!
     @IBOutlet weak var plot: UILabel!
-    @IBOutlet weak var youtube: UIButton!
-    @IBOutlet weak var imdb: UIButton!
-    @IBOutlet weak var addToFavoritesBtn: UIButton!
-    @IBOutlet weak var addToWatchlistBtn: UIButton!
+    @IBOutlet weak var youtube: RoundedCornerBtn!
+    @IBOutlet weak var imdb: RoundedCornerBtn!
+    @IBOutlet weak var addToFavoritesBtn: RoundedCornerBtn!
+    @IBOutlet weak var addToWatchlistBtn: RoundedCornerBtn!
     
     var movieToShow: Movie!
     var fromFavoritesWatchListVC = false
@@ -35,10 +35,8 @@ class ShowMovieVC: UIViewController {
         updateMovieInfoToShow()
         
         if fromFavoritesWatchListVC {
-            addToWatchlistBtn.enabled = false
-            addToWatchlistBtn.alpha = 0.5
-            addToFavoritesBtn.enabled = false
-            addToFavoritesBtn.alpha = 0.5
+            addToWatchlistBtn.setButtonDisabled()
+            addToFavoritesBtn.setButtonDisabled()
         }
     }
     
@@ -94,15 +92,13 @@ class ShowMovieVC: UIViewController {
             if let movieVideoPath = movieToShow.videoPath {
                 print(movieVideoPath)
             } else {
-                youtube.enabled = false
-                youtube.alpha = 0.5
+                youtube.setButtonDisabled()
             }
             //add imdbPath
             if let imdbPath = movieToShow.imdbID {
                 print(imdbPath)
             } else {
-                imdb.enabled = false
-                imdb.alpha = 0.5
+                imdb.setButtonDisabled()
             }
         
         }

@@ -16,7 +16,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var yearField: UITextField!
     @IBOutlet weak var imdbIDField: UITextField!
-    @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var searchBtn: RoundedCornerBtn!
     
     var movie: Movie!
     
@@ -26,8 +26,7 @@ class SearchVC: UIViewController {
         titleField.hidden = true
         yearField.hidden = true
         imdbIDField.hidden = true
-        searchBtn.enabled = false
-        searchBtn.alpha = 0.5
+        searchBtn.setButtonDisabled()
         
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext

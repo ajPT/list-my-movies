@@ -112,7 +112,9 @@ class ShowMovieVC: UIViewController {
         } catch let error as NSError {
             print(error.debugDescription)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.hidesBarsOnTap = false
+        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
@@ -125,7 +127,9 @@ class ShowMovieVC: UIViewController {
         } catch let error as NSError {
             print(error.debugDescription)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.hidesBarsOnTap = false
+        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     @IBAction func onYoutubePressed(sender: AnyObject) {

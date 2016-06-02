@@ -322,7 +322,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xnq-AQ-YFu" userLabel="plot">
-                                                    <rect key="frame" x="91" y="29" width="501" height="20"/>
+                                                    <rect key="frame" x="91" y="29" width="501" height="88"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -334,8 +334,8 @@
                                                 <constraint firstItem="Xnq-AQ-YFu" firstAttribute="top" secondItem="hb1-Ph-y9A" secondAttribute="bottom" id="BhU-4F-jz8"/>
                                                 <constraint firstItem="Xnq-AQ-YFu" firstAttribute="leading" secondItem="Vb2-Qa-aI1" secondAttribute="trailing" constant="8" id="D6U-z0-X3O"/>
                                                 <constraint firstItem="Vb2-Qa-aI1" firstAttribute="leading" secondItem="8A9-83-4Lu" secondAttribute="leadingMargin" id="XI0-fl-9Mc"/>
-                                                <constraint firstItem="Xnq-AQ-YFu" firstAttribute="bottom" secondItem="8A9-83-4Lu" secondAttribute="bottomMargin" id="Y2Z-zY-IXV"/>
                                                 <constraint firstItem="Vb2-Qa-aI1" firstAttribute="bottom" secondItem="8A9-83-4Lu" secondAttribute="bottomMargin" id="bji-gm-nPt"/>
+                                                <constraint firstAttribute="bottom" secondItem="Xnq-AQ-YFu" secondAttribute="bottom" id="fcL-NL-DWy"/>
                                                 <constraint firstItem="hb1-Ph-y9A" firstAttribute="trailing" secondItem="8A9-83-4Lu" secondAttribute="trailingMargin" id="tWa-M5-dpN"/>
                                                 <constraint firstItem="Xnq-AQ-YFu" firstAttribute="trailing" secondItem="8A9-83-4Lu" secondAttribute="trailingMargin" id="taf-M9-PWZ"/>
                                                 <constraint firstItem="Vb2-Qa-aI1" firstAttribute="top" secondItem="8A9-83-4Lu" secondAttribute="topMargin" id="xpu-8D-29j"/>

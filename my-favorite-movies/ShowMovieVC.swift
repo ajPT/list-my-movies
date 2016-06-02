@@ -103,11 +103,29 @@ class ShowMovieVC: UIViewController {
     }
     
     @IBAction func onAddToFavoritesPressed(sender: AnyObject) {
-        print("FAVORITE")
+        movieToShow.favorites = true
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = app.managedObjectContext
+        context.insertObject(movieToShow)
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
-        print("WATCHLIST")
+        movieToShow.watchlist = true
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = app.managedObjectContext
+        context.insertObject(movieToShow)
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func onYoutubePressed(sender: AnyObject) {

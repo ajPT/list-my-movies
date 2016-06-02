@@ -14,7 +14,8 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var watchlist: Bool!
-    var moviesArray = [Movie]()
+    var favoritesArray = [Movie]()
+    var watchlistArray = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,19 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Movie")
+        if watchlist == false {
+            fetchRequest.predicate = NSPredicate(format: "favorites == %@", true)
+        } else {
+            fetchRequest.predicate = NSPredicate(format: "watchlist == %@", true)
+        }
+        
         do {
             let results = try context.executeFetchRequest(fetchRequest)
-            moviesArray = results as! [Movie]
+            if watchlist == false {
+                favoritesArray = results as! [Movie]
+            } else {
+                watchlistArray = results as! [Movie]
+            }
         } catch let err as NSError {
             print(err.debugDescription)
         }
@@ -48,12 +59,21 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moviesArray.count
+        if watchlist == false {
+            return favoritesArray.count
+        } else {
+            return watchlistArray.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as? MovieCell {
-            let movie = moviesArray[indexPath.row]
+            var movie: Movie!
+            if watchlist == false {
+                movie = favoritesArray[indexPath.row]
+            } else {
+                movie = watchlistArray[indexPath.row]
+            }
             cell.configureCell(movie)
             return cell
         } else {
@@ -66,7 +86,11 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("showMovieVC", sender: moviesArray[indexPath.row].objectID)
+        if watchlist == false {
+            performSegueWithIdentifier("showMovieVC", sender: favoritesArray[indexPath.row].objectID)
+        } else {
+            performSegueWithIdentifier("showMovieVC", sender: watchlistArray[indexPath.row].objectID)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

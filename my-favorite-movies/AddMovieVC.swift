@@ -38,6 +38,11 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             movie.title = title
             movie.plot = plot
             movie.year = year
+            if sender.tag == 0 {
+                movie.favorites = true
+            } else if sender.tag == 1 {
+                movie.watchlist = true
+            }
             
             context.insertObject(movie)
             do {

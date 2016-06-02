@@ -14,5 +14,24 @@ class InitialVC: UIViewController {
         super.viewDidLoad()
         }
 
+    @IBAction func onSearchBtnPressed(sender: UIButton) {
+        performSegueWithIdentifier("showSearchVC", sender: nil)
+    }
+    
+    @IBAction func onFavoritesWatchlistBtnPressed(sender: UIButton) {
+        performSegueWithIdentifier("showMoviesList", sender: sender.tag)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMoviesList" {
+            if let moviesList = segue.destinationViewController as? FavoriteWatchlistVC {
+                if sender as? Int == 0 {
+                    moviesList.watchlist = false
+                } else if sender as? Int == 1 {
+                    moviesList.watchlist = true
+                }
+            }
+        }
+    }
 }
 

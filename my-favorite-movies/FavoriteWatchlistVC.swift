@@ -13,6 +13,7 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
+    var watchlist: Bool!
     var moviesArray = [Movie]()
     
     override func viewDidLoad() {

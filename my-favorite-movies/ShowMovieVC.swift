@@ -114,7 +114,8 @@ class ShowMovieVC: UIViewController {
         }
         self.navigationController?.hidesBarsOnTap = false
         self.navigationController?.navigationBarHidden = false
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popViewControllerAnimated(true)
+        //self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     @IBAction func onAddToWatchlistPressed(sender: AnyObject) {

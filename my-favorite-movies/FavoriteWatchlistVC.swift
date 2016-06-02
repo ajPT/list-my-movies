@@ -48,6 +48,7 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
                 favoritesArray = results as! [Movie]
             } else {
                 watchlistArray = results as! [Movie]
+                print(watchlistArray)
             }
         } catch let err as NSError {
             print(err.debugDescription)

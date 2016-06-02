@@ -88,13 +88,11 @@ class ShowMovieVC: UIViewController {
             } else {
                 awards.text = "?"
             }
-            //add videoPath
             if let movieVideoPath = movieToShow.videoPath {
                 print(movieVideoPath)
             } else {
                 youtube.setButtonDisabled()
             }
-            //add imdbPath
             if let imdbPath = movieToShow.imdbID {
                 print(imdbPath)
             } else {

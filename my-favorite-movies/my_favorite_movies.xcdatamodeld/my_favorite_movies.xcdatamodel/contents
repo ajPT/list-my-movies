@@ -3,6 +3,7 @@
     <entity name="Movie" representedClassName=".Movie" syncable="YES">
         <attribute name="actors" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="awards" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorites" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="imdbID" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,9 +13,10 @@
         <attribute name="runtime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="videoPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="watchlist" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Movie" positionX="-54" positionY="-9" width="128" height="225"/>
+        <element name="Movie" positionX="-54" positionY="-9" width="128" height="255"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@
 //  Movie.swift
 //  my-favorite-movies
 //
-//  Created by Amadeu Andrade on 27/05/16.
+//  Created by Amadeu Andrade on 02/06/16.
 //  Copyright © 2016 Amadeu Andrade. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 class Movie: NSManagedObject {
-    
+
     func setMovieImage(img: UIImage?) {
         if let movieImg = img {
             let data = UIImagePNGRepresentation(movieImg)
@@ -31,5 +31,5 @@ class Movie: NSManagedObject {
             return img
         }
     }
-
+    
 }

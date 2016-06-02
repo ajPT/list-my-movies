@@ -60,7 +60,6 @@ class SearchVC: UIViewController {
         } else if titleField.text != "" && yearField.text != "" {
             let stringToUrl = titleField.text!.stringByReplacingOccurrencesOfString(" ", withString: "+")
             url = NSURL(string: "http://www.omdbapi.com/?t=\(stringToUrl)&y=\(yearField.text!)&plot=short&r=json")
-            print(url)
         } else if titleField.text != "" {
             let stringToUrl = titleField.text!.stringByReplacingOccurrencesOfString(" ", withString: "+")
             url = NSURL(string: "http://www.omdbapi.com/?t=\(stringToUrl)&plot=short&r=json")
@@ -91,7 +90,6 @@ class SearchVC: UIViewController {
     func parseMovieInfoJSON(data: NSData) {
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-            print(json)
             if let responde = json["Response"] as? String where responde == "False" {
                 print("Wrong IMDb ID!")
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -111,12 +109,8 @@ class SearchVC: UIViewController {
                 self.movie.actors = actors
                 self.movie.awards = awards
                 self.movie.genre = genre
-                print(image)
                 if let url = NSURL(string: "\(image)") {
-                    print(url)
                     if let data = NSData(contentsOfURL: url) {
-                        print("STUFF")
-                        print(data)
                         self.movie.image = data
                     } else {
                         self.movie.image = UIImagePNGRepresentation(UIImage(named: "nomovie")!)

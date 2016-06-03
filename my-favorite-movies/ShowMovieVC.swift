@@ -52,6 +52,48 @@ class ShowMovieVC: UIViewController {
         }
     }
     
+    @IBAction func onAddToFavoritesPressed(sender: AnyObject) {
+        movieToShow.favorites = true
+        context.insertObject(movieToShow)
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+        self.navigationController?.hidesBarsOnTap = false
+        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
+        movieToShow.watchlist = true
+        context.insertObject(movieToShow)
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+        self.navigationController?.hidesBarsOnTap = false
+        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    @IBAction func onYoutubePressed(sender: AnyObject) {
+        performSegueWithIdentifier("ShowWebVC", sender: movieToShow.videoPath)
+    }
+    
+    @IBAction func onIMDbPressed(sender: AnyObject) {
+        performSegueWithIdentifier("ShowWebVC", sender: movieToShow.imdbID)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowWebVC" {
+            if let showWebVC = segue.destinationViewController as? ShowWebVC {
+                showWebVC.urlFromShowVC = sender as! String
+            }
+        }
+    }
+    
     func updateMovieInfoToShow() {
         if let title = movieToShow.title, let year = movieToShow.year, let plotTxt = movieToShow.plot { //change this
             movieCover.image = movieToShow.getMovieImage()
@@ -93,49 +135,7 @@ class ShowMovieVC: UIViewController {
             if movieToShow.imdbID == nil {
                 imdb.setButtonDisabled()
             }
-        
-        }
-    }
-    
-    @IBAction func onAddToFavoritesPressed(sender: AnyObject) {
-        movieToShow.favorites = true
-        context.insertObject(movieToShow)
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print(error.debugDescription)
-        }
-        self.navigationController?.hidesBarsOnTap = false
-        self.navigationController?.navigationBarHidden = false
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
-        movieToShow.watchlist = true
-        context.insertObject(movieToShow)
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print(error.debugDescription)
-        }
-        self.navigationController?.hidesBarsOnTap = false
-        self.navigationController?.navigationBarHidden = false
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    @IBAction func onYoutubePressed(sender: AnyObject) {
-        performSegueWithIdentifier("ShowWebVC", sender: movieToShow.videoPath)
-    }
-    
-    @IBAction func onIMDbPressed(sender: AnyObject) {
-        performSegueWithIdentifier("ShowWebVC", sender: movieToShow.imdbID)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowWebVC" {
-            if let showWebVC = segue.destinationViewController as? ShowWebVC {
-                showWebVC.urlFromShowVC = sender as! String
-            }
+            
         }
     }
     

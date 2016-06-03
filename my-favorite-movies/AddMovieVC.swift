@@ -49,7 +49,7 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             } catch let err as NSError {
                 print(err.debugDescription)
             }
-            self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popToRootViewControllerAnimated(true)
             
         } else {
             UtilAlerts().showAlert(self, title: "Warning", message: UtilAlerts.applicationAlerts.MissingInformation)

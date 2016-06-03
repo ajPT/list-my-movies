@@ -24,6 +24,7 @@
 		E04052221CFF78D60065DCCF /* ShowWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04052211CFF78D60065DCCF /* ShowWebVC.swift */; };
 		E04052251D00CDE40065DCCF /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04052231D00CDE40065DCCF /* Movie+CoreDataProperties.swift */; };
 		E04052261D00CDE40065DCCF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04052241D00CDE40065DCCF /* Movie.swift */; };
+		E09CFEDB1D01E18D0061F00E /* SearchVC+Requests+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09CFEDA1D01E18D0061F00E /* SearchVC+Requests+Parse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E04052211CFF78D60065DCCF /* ShowWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowWebVC.swift; sourceTree = "<group>"; };
 		E04052231D00CDE40065DCCF /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Movie+CoreDataProperties.swift"; path = "../Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E04052241D00CDE40065DCCF /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = ../Movie.swift; sourceTree = "<group>"; };
+		E09CFEDA1D01E18D0061F00E /* SearchVC+Requests+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchVC+Requests+Parse.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				E04052231D00CDE40065DCCF /* Movie+CoreDataProperties.swift */,
 				E04052241D00CDE40065DCCF /* Movie.swift */,
+				E09CFEDA1D01E18D0061F00E /* SearchVC+Requests+Parse.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				E04052221CFF78D60065DCCF /* ShowWebVC.swift in Sources */,
 				E01CA1F91CF72B51005C55C1 /* FavoriteWatchlistVC.swift in Sources */,
 				E01CA1E31CF60CDE005C55C1 /* InitialVC.swift in Sources */,
+				E09CFEDB1D01E18D0061F00E /* SearchVC+Requests+Parse.swift in Sources */,
 				E01CA2061CF73F52005C55C1 /* SearchVC.swift in Sources */,
 				E040521D1CFA0F5C0065DCCF /* RoundedCornerBtn.swift in Sources */,
 				E01CA1E91CF60CDE005C55C1 /* my_favorite_movies.xcdatamodeld in Sources */,

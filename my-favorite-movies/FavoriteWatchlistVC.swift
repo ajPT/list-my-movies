@@ -16,11 +16,12 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     var watchlist: Bool!
     var favoritesArray = [Movie]()
     var watchlistArray = [Movie]()
+    
     let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(FavoriteWatchlistVC.onAddBtnPressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .Plain, target: self, action: #selector(FavoriteWatchlistVC.onAddBtnPressed))
         tableView.backgroundView = UIImageView(image: UIImage(named: "bg"))
     }
     

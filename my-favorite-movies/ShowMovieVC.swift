@@ -27,6 +27,7 @@ class ShowMovieVC: UIViewController {
     
     var movieToShow: Movie!
     var fromFavoritesWatchListVC = false
+    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +48,6 @@ class ShowMovieVC: UIViewController {
     override func willMoveToParentViewController(parent: UIViewController?) {
         if parent == nil && fromFavoritesWatchListVC == false {
             // Discard movie from searchVC       
-            let app = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context = app.managedObjectContext
             context.deleteObject(movieToShow)
         }
     }
@@ -104,8 +103,6 @@ class ShowMovieVC: UIViewController {
     
     @IBAction func onAddToFavoritesPressed(sender: AnyObject) {
         movieToShow.favorites = true
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = app.managedObjectContext
         context.insertObject(movieToShow)
         do {
             try context.save()
@@ -119,8 +116,6 @@ class ShowMovieVC: UIViewController {
     
     @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
         movieToShow.watchlist = true
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = app.managedObjectContext
         context.insertObject(movieToShow)
         do {
             try context.save()

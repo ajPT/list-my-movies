@@ -12,7 +12,7 @@ class InitialVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        }
+    }
 
     @IBAction func onSearchBtnPressed(sender: UIButton) {
         performSegueWithIdentifier("showSearchVC", sender: nil)

@@ -18,6 +18,7 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var plotField: UITextField!
     
     var imagePicker: UIImagePickerController!
+    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,6 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBAction func addMovie(sender: UIButton) {
         if let title = titleField.text where title != "", let year = yearField.text where year != "", let plot = plotField.text where plot != "" {
             
-            let app = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context = app.managedObjectContext
             let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: context)!
             let movie = Movie(entity: entity, insertIntoManagedObjectContext: context)
             

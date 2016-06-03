@@ -19,6 +19,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchBtn: RoundedCornerBtn!
     
     var movie: Movie!
+    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,6 @@ class SearchVC: UIViewController {
         imdbIDField.hidden = true
         searchBtn.setButtonDisabled()
         
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = app.managedObjectContext
         let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: context)!
         movie = Movie(entity: entity, insertIntoManagedObjectContext: context)
     }

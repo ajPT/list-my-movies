@@ -16,6 +16,7 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     var watchlist: Bool!
     var favoritesArray = [Movie]()
     var watchlistArray = [Movie]()
+    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,6 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func fetchAndSetResults() {
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = app.managedObjectContext
         context.reset()
         let fetchRequest = NSFetchRequest(entityName: "Movie")
         if watchlist == false {
@@ -100,8 +99,6 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
         if segue.identifier == "showMovieVC" {
             if let viewToBeCalled = segue.destinationViewController as? ShowMovieVC {
                 if let movieID = sender as? NSManagedObjectID {
-                    let app = UIApplication.sharedApplication().delegate as! AppDelegate
-                    let context = app.managedObjectContext
                     let movie = context.objectWithID(movieID) as! Movie
                     viewToBeCalled.movieToShow = movie
                     viewToBeCalled.fromFavoritesWatchListVC = true

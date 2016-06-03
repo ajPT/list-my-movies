@@ -52,21 +52,12 @@ class ShowMovieVC: UIViewController {
         }
     }
     
-    @IBAction func onAddToFavoritesPressed(sender: AnyObject) {
-        movieToShow.favorites = true
-        context.insertObject(movieToShow)
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print(error.debugDescription)
+    @IBAction func onAddToPressed(sender: AnyObject) {
+        if sender.tag == 0 {
+            movieToShow.favorites = true
+        } else {
+            movieToShow.watchlist = true
         }
-        self.navigationController?.hidesBarsOnTap = false
-        self.navigationController?.navigationBarHidden = false
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    @IBAction func onAddToWatchlistPressed(sender: AnyObject) {
-        movieToShow.watchlist = true
         context.insertObject(movieToShow)
         do {
             try context.save()

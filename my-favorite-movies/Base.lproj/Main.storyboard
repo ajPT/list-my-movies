@@ -794,10 +794,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="711" height="34"/>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="onAddToFavoritesPressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="EwR-cc-PVr"/>
+                                                    <action selector="onAddToPressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="C2V-wi-Ad5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-Rn-vYr" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-Rn-vYr" customClass="RoundedCornerBtn" customModule="my_favorite_movies" customModuleProvider="target">
                                                 <rect key="frame" x="283" y="0.0" width="277" height="30"/>
                                                 <color key="backgroundColor" red="0.99215686270000003" green="0.83529411760000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Add to Watchlist">
@@ -810,6 +810,7 @@
                                                     <rect key="frame" x="721" y="0.0" width="711" height="34"/>
                                                 </variation>
                                                 <connections>
+                                                    <action selector="onAddToPressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="anQ-oO-z4M"/>
                                                     <action selector="onAddToWatchlistPressed:" destination="JGs-bm-HPp" eventType="touchUpInside" id="z14-5g-GtT"/>
                                                 </connections>
                                             </button>
@@ -857,7 +858,7 @@
                     </view>
                     <connections>
                         <outlet property="actors" destination="bDE-nq-5Zy" id="W3F-Lh-0CI"/>
-                        <outlet property="addToFavoritesBtn" destination="MRK-vK-H7W" id="ojE-qr-KhB"/>
+                        <outlet property="addToFavoritesBtn" destination="MRK-vK-H7W" id="7t8-WF-1Fa"/>
                         <outlet property="addToWatchlistBtn" destination="6pf-Rn-vYr" id="Gsd-h6-iZM"/>
                         <outlet property="awards" destination="Kut-vG-rit" id="aPX-RF-Hlx"/>
                         <outlet property="date" destination="3WG-fc-ZcR" id="EdS-Go-yEd"/>

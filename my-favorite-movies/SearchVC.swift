@@ -90,7 +90,6 @@ class SearchVC: UIViewController {
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
             if let responde = json["Response"] as? String where responde == "False" {
-                print("Wrong IMDb ID!")
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     UtilAlerts().showAlert(self, title: "Warning", message: UtilAlerts.applicationAlerts.WrongInformation)
                 }

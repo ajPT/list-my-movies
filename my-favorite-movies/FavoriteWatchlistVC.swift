@@ -35,6 +35,7 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
     func fetchAndSetResults() {
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
+        context.reset()
         let fetchRequest = NSFetchRequest(entityName: "Movie")
         if watchlist == false {
             fetchRequest.predicate = NSPredicate(format: "favorites == %@", true)
@@ -46,6 +47,7 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
             let results = try context.executeFetchRequest(fetchRequest)
             if watchlist == false {
                 favoritesArray = results as! [Movie]
+                print(favoritesArray)
             } else {
                 watchlistArray = results as! [Movie]
                 print(watchlistArray)

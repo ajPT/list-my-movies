@@ -47,8 +47,7 @@ class ShowMovieVC: UIViewController {
     
     override func willMoveToParentViewController(parent: UIViewController?) {
         if parent == nil && fromFavoritesWatchListVC == false {
-            // Discard movie from searchVC       
-            context.deleteObject(movieToShow)
+            context.reset()
         }
     }
     
@@ -64,6 +63,7 @@ class ShowMovieVC: UIViewController {
         } catch let error as NSError {
             print(error.debugDescription)
         }
+        context.reset()
         self.navigationController?.hidesBarsOnTap = false
         self.navigationController?.navigationBarHidden = false
         self.navigationController?.popToRootViewControllerAnimated(true)

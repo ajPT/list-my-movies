@@ -49,6 +49,7 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             } catch let err as NSError {
                 print(err.debugDescription)
             }
+            context.reset()
             self.navigationController?.popToRootViewControllerAnimated(true)
             
         } else {

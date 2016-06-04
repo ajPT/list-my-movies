@@ -94,6 +94,26 @@ class FavoriteWatchlistVC: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            if watchlist == false {
+                context.deleteObject(favoritesArray[indexPath.row])
+                favoritesArray.removeAtIndex(indexPath.row)
+            } else {
+                context.deleteObject(watchlistArray[indexPath.row])
+                watchlistArray.removeAtIndex(indexPath.row)
+                watchlistArray.removeAtIndex(indexPath.row)
+            }
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            do {
+                try context.save()
+            } catch let err as NSError {
+                print(err.debugDescription)
+            }
+            context.reset()
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMovieVC" {
             if let viewToBeCalled = segue.destinationViewController as? ShowMovieVC {
